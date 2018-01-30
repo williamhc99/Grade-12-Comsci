@@ -1,0 +1,43 @@
+/* 
+ * Name: William Chen
+ * Date: February 27 2017
+ * Mr. Anandarajan
+ * ICS4U Period 5
+ * Objectives: Complete Recursion Exercise
+ */
+import java.util.Scanner;
+
+class Recursion_Exercises{
+  public static void main (String args[]){
+    Scanner s = new Scanner(System.in);
+    System.out.println("Enter a positive integer value: ");
+    int ui = s.nextInt();
+    int product = factorial(ui);
+    System.out.println(product);
+    
+    System.out.println("Enter a number: "); 
+    int m = s.nextInt();
+    System.out.println("Enter a number: "); 
+    int n = s.nextInt();
+    
+    int gcf = euclid(m,n);
+    System.out.println(m);
+  }
+  public static int factorial (int num){
+    if (num>1){
+      return num*factorial(num-1);
+    }
+    return 1;
+  }
+  public static int euclid(int m, int n){
+    int swap;
+    
+   
+    if (m>n){
+      return euclid(n, m-n);
+    }else if (m<n){
+      return euclid(n,m);
+    }
+    return m;
+  }
+}

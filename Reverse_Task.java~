@@ -1,0 +1,27 @@
+/* Name: William Chen
+ * Date: February 7 2017
+ * Mr. Anandarajan
+ * ICS4U Period 5
+ */
+import java.util.Scanner;
+
+class Reverse_Task {
+  public static void main (String args[]) {
+    Scanner myScanner = new Scanner(System.in);
+    
+    system.out.println("Enter a number to be reversed:");
+    
+    int originalNum = myScanner.nextInt();
+    int a = 1;
+    int counter = 0;
+    while(a>0){
+      if (originalNum/10>1){
+        counter +1;
+      }else{
+        a=0;
+      }
+    }
+  }
+}
+    
+  

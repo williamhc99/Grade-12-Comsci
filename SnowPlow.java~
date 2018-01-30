@@ -1,0 +1,38 @@
+import java.util.Scanner;
+import java.util.Random;
+
+class SnowPlow{
+  
+  static int row;
+  static int col;
+  static Scanner s = new Scanner (System.in);
+  static Random rn = new Random();
+  
+  public static void main (String args[]){
+    
+    row = s.nextInt();
+    col = s.nextInt();
+    
+    int [][] array = new array[row][col];
+    
+    set(array);
+    
+  }
+  
+  public static void set (int array[][]){
+    for (int r = 0; r<array.length; r++){
+      for (int c = 0; c<array[r].length; c++){
+        array[r][c]=rn.nextInt(2)+1;
+      }
+    }
+  }
+  
+  public static void display (int array[][]){
+    for (int r = 0; r<array.length; r++){
+      for (int c = 0; c<array[r].length; c++){
+        System.out.println(array[r][c]);
+      }
+    }
+  }
+}
+        

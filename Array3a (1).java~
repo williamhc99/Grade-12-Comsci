@@ -1,0 +1,61 @@
+/* 
+ * Name: William Chen
+ * Date: February 8 2017
+ * Mr. Anandarajan
+ * ICS4U Period 5
+ * Objectives: Complete Level 3 Array Exercises
+ */
+
+import java.util.Scanner;
+import java.util.Random;
+
+class Array3a{
+  static Scanner myScanner = new Scanner (System.in);
+  static Random rn = new Random ();
+  public static void main (String args[]){
+    int placeholder=0;
+    NoDuplicates(placeholder);
+    //RandomNoDuplicates(placeholder);
+  }
+  public static void NoDuplicates (int placeholder){
+    final int MAX = 7;
+    int[] list = new int[MAX];
+    int[] occurrence = new int [100];
+    int counter = 0;
+    while(counter<7){  
+      System.out.println("Enter number: ");
+      list[counter] = myScanner.nextInt();
+      if(occurrence[list[counter]]==1){
+        System.out.println("This number has been entered already.");
+      }else{
+        occurrence[list[counter]]++;
+        counter++;
+      }
+    }
+    for (int i=0; i<MAX; i++){
+      System.out.println(list[i]);
+    }
+  }
+  public static void RandomNoDuplicates (int placeholder){
+    final int MAX = 10;
+    int[] randomList = new int[MAX];
+    boolean unique = false;
+    randomList[0]=rn.nextInt(100);
+    for (int i=1; i<MAX; i++){
+      randomList[i]=rn.nextInt(100);
+      unique=false;
+      while (unique==false){
+        for (int j=0; j<i; j++){
+          if(randomList[i]==randomList[j]){
+            randomList[i]=rn.nextInt(100);
+          }else if(randomList[i]!=randomList[j]){
+            unique=true;
+          }
+        }       
+      }
+    }
+    for (int k=0; k<MAX; k++){
+      System.out.println(randomList[k]);
+    }
+  }
+}

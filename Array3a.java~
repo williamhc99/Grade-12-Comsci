@@ -1,0 +1,91 @@
+/* 
+ * Name: William Chen
+ * Date: February 8 2017
+ * Mr. Anandarajan
+ * ICS4U Period 5
+ * Objectives: Complete Level 3 Array Exercises
+ */
+
+import java.util.Scanner;
+import java.util.Random;
+
+class Array3a{
+  static Scanner myScanner = new Scanner (System.in);
+  static Random rn = new Random ();
+  public static void main (String args[]){
+    int placeholder=0;
+    NoDuplicates(placeholder);
+    //RandomNoDuplicates(placeholder);
+  }
+  public static void NoDuplicates (int placeholder){
+   /* final int MAX = 7;
+    int[] uniqueList = new int[MAX];
+    boolean unique = false;
+    System.out.println("Enter a unique number: ");
+    uniqueList[0]=myScanner.nextInt();
+    for (int i=1; i<MAX; i++){
+      System.out.println("Enter a unique number: ");
+      uniqueList[i]=myScanner.nextInt();
+      unique=false;
+      while (unique==false){
+        for (int j=0; j<i; j++){
+          if(uniqueList[i]==uniqueList[j]){
+            System.out.println("Re-enter your number: ");
+            uniqueList[i]=myScanner.nextInt();
+          }else if(uniqueList[i]!=uniqueList[j]){
+            unique=true;
+          }
+        }       
+      }
+    }
+    for (int k=0; k<MAX; k++){
+      System.out.println(uniqueList[k]);
+    }*/
+    final int MAX = 10;
+    int[] list = new int [100];
+    boolean unique = false;
+    System.out.println("Enter number: ");
+    int userInput = myScanner.nextInt();
+    for (int i=0; i<MAX;i++){
+      list[userInput-1]++;
+      unique=false;
+      int j=0;
+      while (unique==false&&j<i){
+        if(list[userInput-1]>1){
+          System.out.println("Re-enter your number: ");
+          userInput=myScanner.nextInt();
+          j++;
+        }else if(list[userInput-1]==1){
+          unique=true;
+        }
+      }       
+      System.out.println("Enter number: ");
+      userInput = myScanner.nextInt();
+    }
+  }
+  public static void RandomNoDuplicates (int placeholder){
+    final int MAX = 10;
+    int[] randomList = new int[MAX];
+    boolean unique = false;
+    randomList[0]=rn.nextInt(100);
+    for (int i=1; i<MAX; i++){
+      randomList[i]=rn.nextInt(100);
+      unique=false;
+      while (unique==false){
+        for (int j=0; j<i; j++){
+          if(randomList[i]==randomList[j]){
+            randomList[i]=rn.nextInt(100);
+          }else if(randomList[i]!=randomList[j]){
+            unique=true;
+          }
+        }       
+      }
+    }
+    for (int k=0; k<MAX; k++){
+      System.out.println(randomList[k]);
+    }
+  }
+}
+      
+
+    

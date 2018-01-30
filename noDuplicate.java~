@@ -1,0 +1,32 @@
+import java.util.Scanner;
+class noDuplicate{
+  public static void main (String args[]){
+    Scanner myScanner = new Scanner (System.in);
+    final int MAX = 6;
+    int[] list = new int[MAX];
+    boolean unique; 
+    System.out.println("Enter a number: ");
+    list[0] = myScanner.nextInt();
+    for (int i=1; i<MAX; i++){
+      System.out.println("Enter a number: ");
+      list[i] = myScanner.nextInt();
+      do{
+        unique = false;
+        for (int j=0; j<i; j++){
+          if (list[j]==list[i]){
+            j--;
+            unique = false;
+          }else{
+            unique=true;
+          }
+          System.out.println("Enter a new number: ");
+          list[i] =2 myScanner.nextInt();
+        }
+      }while (unique==false);
+    }
+    for (int i=0; i<MAX; i++){
+      System.out.println(list[i]);
+    }
+  }
+}
+      
